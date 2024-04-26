@@ -7,15 +7,32 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/Home.jsx";
 import SignUp from "./pages/SignUp.jsx";
 import Login from "./pages/Login.jsx";
+import ErrorPage from "./pages/ErrorPage.jsx";
+import AllTouristsSpot from "./pages/AllTouristsSpot.jsx";
+import AddTouristsSpot from "./pages/AddTouristsSpot.jsx";
+import MyList from "./pages/MyList.jsx";
 
 const routes = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
         element: <Home />,
+      },
+      {
+        path: "/all-tourists-spot",
+        element: <AllTouristsSpot />,
+      },
+      {
+        path: "/add-tourists-spot",
+        element: <AddTouristsSpot />,
+      },
+      {
+        path: "/my-list",
+        element: <MyList />,
       },
       {
         path: "/sign-up",
