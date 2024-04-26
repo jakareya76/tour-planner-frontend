@@ -1,11 +1,13 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../context/AuthProvider";
 import { Link, useNavigate } from "react-router-dom";
-import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { FaEye, FaEyeSlash, FaFacebookF } from "react-icons/fa";
+import { FaGoogle } from "react-icons/fa6";
 
 const Login = () => {
   const [toggleShowPassword, settoggleShowPassword] = useState(false);
-  const { user, login } = useContext(AuthContext);
+  const { user, login, loginWithGoogle, loginWithFacebook } =
+    useContext(AuthContext);
   const navigate = useNavigate();
 
   const handleLogin = async (event) => {
@@ -81,6 +83,22 @@ const Login = () => {
           <div className="mt-2 form-control">
             <button type="submit" className="btn btn-primary">
               Login
+            </button>
+          </div>
+          <div className="flex items-center justify-center gap-5 my-5">
+            <button
+              type="button"
+              onClick={() => loginWithGoogle()}
+              className="flex items-center justify-center w-1/2 gap-3 py-4 font-medium border-2 bg-base-200 rounded-xl"
+            >
+              <FaGoogle size={20} /> Sign In With Google
+            </button>
+            <button
+              type="button"
+              onClick={() => loginWithFacebook()}
+              className="flex items-center justify-center w-1/2 gap-3 py-4 font-medium border-2 bg-base-200 rounded-xl"
+            >
+              <FaFacebookF size={20} /> Sign In With Facebook
             </button>
           </div>
         </form>
