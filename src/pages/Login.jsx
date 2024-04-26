@@ -5,8 +5,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Login = () => {
   const [toggleShowPassword, settoggleShowPassword] = useState(false);
-
-  const { login } = useContext(AuthContext);
+  const { user, login } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const handleLogin = async (event) => {
@@ -25,6 +24,10 @@ const Login = () => {
       console.log(error.message);
     }
   };
+
+  if (user) {
+    navigate("/");
+  }
 
   return (
     <div className="flex items-center justify-center w-full my-10">
