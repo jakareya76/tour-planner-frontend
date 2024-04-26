@@ -1,7 +1,7 @@
 const Footer = () => {
   return (
     <div className="bg-base-200 text-base-content">
-      <footer className="container p-10 mx-auto footer">
+      <footer className="container grid-cols-2 p-10 mx-auto md:grid-cols-3 footer">
         <nav>
           <h6 className="footer-title">Services</h6>
           <a className="link link-hover">Branding</a>
@@ -31,7 +31,7 @@ const Footer = () => {
             Providing reliable Tour Guid since 2024
           </p>
         </aside>
-        <nav className="md:place-self-center md:justify-self-end">
+        <nav className="md:place-self-center justify-self-center md:justify-self-end">
           <div className="grid grid-flow-col gap-4">
             <a>
               <svg
