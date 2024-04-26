@@ -3,11 +3,13 @@ import { AuthContext } from "../context/AuthProvider";
 import { Link, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash, FaFacebookF } from "react-icons/fa";
 import { FaGoogle } from "react-icons/fa6";
+import { toast } from "react-toastify";
 
 const Login = () => {
   const [toggleShowPassword, settoggleShowPassword] = useState(false);
   const { user, login, loginWithGoogle, loginWithFacebook } =
     useContext(AuthContext);
+
   const navigate = useNavigate();
 
   const handleLogin = async (event) => {
@@ -22,8 +24,11 @@ const Login = () => {
       await login(email, password);
 
       navigate("/");
+      toast.success("Successfully Login");
     } catch (error) {
-      console.log(error.message);
+      if (error.message === "Firebase: Error (auth/invalid-credential).") {
+        toast.error("invalid credential");
+      }
     }
   };
 

@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
+import "swiper/css";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/Home.jsx";
@@ -13,6 +14,7 @@ import AddTouristsSpot from "./pages/AddTouristsSpot.jsx";
 import MyList from "./pages/MyList.jsx";
 
 import AuthProvider from "./context/AuthProvider.jsx";
+import PrivateRoutes from "./Routes/PrivateRoutes.jsx";
 
 const routes = createBrowserRouter([
   {
@@ -30,11 +32,19 @@ const routes = createBrowserRouter([
       },
       {
         path: "/add-tourists-spot",
-        element: <AddTouristsSpot />,
+        element: (
+          <PrivateRoutes>
+            <AddTouristsSpot />,
+          </PrivateRoutes>
+        ),
       },
       {
         path: "/my-list",
-        element: <MyList />,
+        element: (
+          <PrivateRoutes>
+            <MyList />
+          </PrivateRoutes>
+        ),
       },
       {
         path: "/sign-up",

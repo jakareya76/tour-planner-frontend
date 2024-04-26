@@ -4,6 +4,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { AuthContext } from "../context/AuthProvider";
 import { updateProfile } from "firebase/auth";
 import { auth } from "../firebase/firebase.config";
+import { toast } from "react-toastify";
 
 const SignUp = () => {
   const [toggleShowPassword, settoggleShowPassword] = useState(false);
@@ -32,8 +33,11 @@ const SignUp = () => {
       });
 
       navigate("/");
+      toast.success("Successfully Sign Up");
     } catch (error) {
-      console.log(error.message);
+      if (error.message === "Firebase: Error (auth/invalid-credential).") {
+        toast.error("invalid credential");
+      }
     }
   };
 
