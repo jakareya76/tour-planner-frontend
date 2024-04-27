@@ -93,9 +93,12 @@ const MyList = () => {
                     >
                       View
                     </Link>
-                    <button className="px-6 text-white bg-blue-500 btn hover:bg-blue-600">
+                    <Link
+                      to={`/edit-tour/${tour._id}`}
+                      className="px-6 text-white bg-blue-500 btn hover:bg-blue-600"
+                    >
                       Edit
-                    </button>
+                    </Link>
                     <button
                       onClick={() => handleDelete(tour._id)}
                       className="px-6 text-white bg-red-500 btn hover:bg-red-600"

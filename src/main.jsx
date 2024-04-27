@@ -16,6 +16,7 @@ import MyList from "./pages/MyList.jsx";
 import AuthProvider from "./context/AuthProvider.jsx";
 import PrivateRoutes from "./Routes/PrivateRoutes.jsx";
 import TouristDetails from "./pages/TouristDetails.jsx";
+import EditTour from "./pages/EditTour.jsx";
 
 const routes = createBrowserRouter([
   {
@@ -50,6 +51,12 @@ const routes = createBrowserRouter([
             <MyList />
           </PrivateRoutes>
         ),
+      },
+      {
+        path: "/edit-tour/:id",
+        element: <EditTour />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/tour/${params.id}`),
       },
       {
         path: "/sign-up",
