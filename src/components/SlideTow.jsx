@@ -8,7 +8,9 @@ const SlideTow = () => {
     >
       <div className="absolute z-10 w-full h-full bg-zinc-950 opacity-40"></div>
       <div className="absolute z-20 flex flex-col items-center justify-center w-full h-full">
-        <h2 className="text-5xl font-bold text-white">Let the journey begin</h2>
+        <h2 className="text-5xl font-bold text-center text-white">
+          Let the journey begin
+        </h2>
         <p className="max-w-2xl my-5 text-center text-gray-200">
           Your Gateway to Global Adventures! Embark on a journey of discovery
           with our curated travel experiences, immersive destinations, and
