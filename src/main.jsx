@@ -15,6 +15,7 @@ import MyList from "./pages/MyList.jsx";
 
 import AuthProvider from "./context/AuthProvider.jsx";
 import PrivateRoutes from "./Routes/PrivateRoutes.jsx";
+import TouristDetails from "./pages/TouristDetails.jsx";
 
 const routes = createBrowserRouter([
   {
@@ -37,6 +38,10 @@ const routes = createBrowserRouter([
             <AddTouristsSpot />,
           </PrivateRoutes>
         ),
+      },
+      {
+        path: "/tour-details/:id",
+        element: <TouristDetails />,
       },
       {
         path: "/my-list",

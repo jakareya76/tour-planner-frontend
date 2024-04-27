@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { FaPeopleRobbery } from "react-icons/fa6";
 import { MdOutlineTravelExplore } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 const TouristSpots = () => {
   const [allTours, setAllTours] = useState([]);
@@ -16,11 +17,9 @@ const TouristSpots = () => {
     getAllTours();
   }, []);
 
-  console.log(allTours);
-
   return (
     <section>
-      <h2 className="text-3xl font-bold text-center">Our Top Tourists Spots</h2>
+      <h2 className="text-3xl font-bold text-center">Our Tourists Spots</h2>
       <div className="flex items-center justify-center mt-8">
         <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
           {allTours.map((tour) => {
@@ -58,9 +57,12 @@ const TouristSpots = () => {
                     </h4>
                   </div>
                   <div className="card-actions">
-                    <button className="w-full btn btn-primary">
+                    <Link
+                      to={`/tour-details/${tour._id}`}
+                      className="w-full btn btn-primary"
+                    >
                       View Details
-                    </button>
+                    </Link>
                   </div>
                 </div>
               </div>
