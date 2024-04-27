@@ -3,6 +3,7 @@ import { FaPeopleRobbery } from "react-icons/fa6";
 import { MdOutlineTravelExplore } from "react-icons/md";
 import { AuthContext } from "../context/AuthProvider";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const MyList = () => {
   const [myTourList, setMyTourList] = useState([]);
@@ -25,6 +26,8 @@ const MyList = () => {
             return tour._id !== id;
           });
         });
+
+        toast.success("Tour Deleted");
       }
     } catch (error) {
       console.log(error);

@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import { AuthContext } from "../context/AuthProvider";
+import { toast } from "react-toastify";
 
 const EditTour = () => {
   const { user } = useContext(AuthContext);
@@ -8,13 +9,11 @@ const EditTour = () => {
   const { id } = useParams();
   const tourData = useLoaderData();
 
-  const handleEditTour = (event) => {
+  const handleEditTour = async (event) => {
     event.preventDefault();
 
     const form = event.target;
 
-    const username = form.username.value;
-    const email = form.email.value;
     const TouristsSpotName = form.TouristsSpotName.value;
     const country = form.country.value;
     const location = form.location.value;
@@ -26,8 +25,6 @@ const EditTour = () => {
     const description = form.description.value;
 
     const updatedTouristSpot = {
-      username,
-      email,
       TouristsSpotName,
       country,
       location,
@@ -39,7 +36,23 @@ const EditTour = () => {
       description,
     };
 
-    console.log(updatedTouristSpot);
+    try {
+      const res = await fetch(`http://localhost:5000/update-tour/${id}`, {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(updatedTouristSpot),
+      });
+
+      const data = await res.json();
+
+      if (data.modifiedCount > 0) {
+        toast.success("Update Tour Data");
+      }
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
