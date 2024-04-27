@@ -1,21 +1,32 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper/modules";
+import { Pagination, Autoplay } from "swiper/modules";
 import "swiper/css/pagination";
+import SlideOne from "./SlideOne";
+import SlideTow from "./SlideTow";
+import SlideThree from "./SlideThree";
+import SlideFour from "./SlideFour";
 
 const Banner = () => {
   return (
-    <Swiper modules={[Pagination]} pagination={{ clickable: true }}>
+    <Swiper
+      autoplay={{
+        delay: 2500,
+        disableOnInteraction: false,
+      }}
+      modules={[Autoplay, Pagination]}
+      pagination={{ clickable: true }}
+    >
       <SwiperSlide>
-        <div className="w-full h-[calc(100vh-80px)] bg-red-500"></div>
+        <SlideOne />
       </SwiperSlide>
       <SwiperSlide>
-        <div className="w-full h-[calc(100vh-80px)] bg-blue-500"></div>
+        <SlideTow />
       </SwiperSlide>
       <SwiperSlide>
-        <div className="w-full h-[calc(100vh-80px)] bg-orange-600"></div>
+        <SlideThree />
       </SwiperSlide>
       <SwiperSlide>
-        <div className="w-full h-[calc(100vh-80px)] bg-pink-600"></div>
+        <SlideFour />
       </SwiperSlide>
     </Swiper>
   );
