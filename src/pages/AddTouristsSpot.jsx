@@ -1,6 +1,10 @@
+import { useContext } from "react";
 import { toast } from "react-toastify";
+import { AuthContext } from "../context/AuthProvider";
 
 const AddTouristsSpot = () => {
+  const { user } = useContext(AuthContext);
+
   const handleAddTouristsSpot = async (event) => {
     event.preventDefault();
 
@@ -64,12 +68,14 @@ const AddTouristsSpot = () => {
             name="username"
             placeholder="Your Name"
             className="input input-bordered"
+            defaultValue={user.displayName}
           />
           <input
             type="email"
             name="email"
             placeholder="Your Email"
             className="input input-bordered"
+            defaultValue={user.email}
           />
           <input
             type="text"

@@ -53,12 +53,16 @@ const Navbar = () => {
           <li>
             <Link to="/all-tourists-spot">All Tourists Spot</Link>
           </li>
-          <li>
-            <Link to="/add-tourists-spot">Add Tourists Spot</Link>
-          </li>
-          <li>
-            <Link to="/my-list">My List</Link>
-          </li>
+          {user && (
+            <>
+              <li>
+                <Link to="/add-tourists-spot">Add Tourists Spot</Link>
+              </li>
+              <li>
+                <Link to="/my-list">My List</Link>
+              </li>
+            </>
+          )}
         </ul>
       </div>
       <div className="navbar-end">
