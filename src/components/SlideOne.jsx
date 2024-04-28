@@ -11,6 +11,7 @@ const SlideOne = () => {
         <h2 className="text-5xl font-bold text-center text-white">
           Let the journey begin
         </h2>
+
         <p className="max-w-2xl my-5 text-center text-gray-200">
           Your Gateway to Global Adventures! Embark on a journey of discovery
           with our curated travel experiences, immersive destinations, and

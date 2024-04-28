@@ -1,8 +1,8 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../context/AuthProvider";
 import { Link } from "react-router-dom";
-
 import Swal from "sweetalert2";
+import { Fade } from "react-awesome-reveal";
 
 const MyList = () => {
   const [myTourList, setMyTourList] = useState([]);
@@ -66,46 +66,49 @@ const MyList = () => {
         {/* table */}
 
         <div className="overflow-x-auto">
-          <table className="table">
-            {/* head */}
-            <thead>
-              <tr>
-                <th>Tourists Spots Name</th>
-                <th>Country</th>
-                <th>Location</th>
-                <th>Cost</th>
-                <th>Action</th>
-              </tr>
-            </thead>
-            <tbody>
-              {myTourList.map((tour) => {
-                return (
-                  <tr key={tour._id}>
-                    <td>{tour.TouristsSpotName}</td>
-                    <td>{tour.country}</td>
-                    <td>{tour.location}</td>
-                    <td>{tour.cost}</td>
-                    <td>
-                      <Link
-                        to={`/edit-tour/${tour._id}`}
-                        className="px-6 text-white bg-blue-500 btn hover:bg-blue-600"
-                      >
-                        Update
-                      </Link>
-                    </td>
-                    <td>
-                      <button
-                        onClick={() => handleDelete(tour._id)}
-                        className="px-6 text-white bg-red-500 btn hover:bg-red-600"
-                      >
-                        Delete
-                      </button>
-                    </td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
+          <Fade>
+            <table className="table">
+              {/* head */}
+
+              <thead>
+                <tr>
+                  <th>Tourists Spots Name</th>
+                  <th>Country</th>
+                  <th>Location</th>
+                  <th>Cost</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                {myTourList.map((tour) => {
+                  return (
+                    <tr key={tour._id}>
+                      <td>{tour.TouristsSpotName}</td>
+                      <td>{tour.country}</td>
+                      <td>{tour.location}</td>
+                      <td>{tour.cost}</td>
+                      <td>
+                        <Link
+                          to={`/edit-tour/${tour._id}`}
+                          className="px-6 text-white bg-blue-500 btn hover:bg-blue-600"
+                        >
+                          Update
+                        </Link>
+                      </td>
+                      <td>
+                        <button
+                          onClick={() => handleDelete(tour._id)}
+                          className="px-6 text-white bg-red-500 btn hover:bg-red-600"
+                        >
+                          Delete
+                        </button>
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </Fade>
         </div>
       </div>
     </section>
