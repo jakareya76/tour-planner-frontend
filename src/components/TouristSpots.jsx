@@ -18,7 +18,7 @@ const TouristSpots = () => {
   }, []);
 
   return (
-    <section>
+    <section className="py-20">
       <h2 className="text-3xl font-bold text-center">All Tourists Spots</h2>
       <div className="flex items-center justify-center mt-8">
         <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
@@ -42,7 +42,9 @@ const TouristSpots = () => {
                   </div>
                   <div className="flex items-center justify-between w-full">
                     <h4>{tour.country}</h4>
-                    <h4 className="text-sm text-gray-600">{tour.location}</h4>
+                    <h4 className="text-sm text-gray-600">
+                      {tour.seasonality}
+                    </h4>
                   </div>
                   <hr />
 

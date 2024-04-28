@@ -1,6 +1,6 @@
 const Destinations = () => {
   return (
-    <section className="py-20">
+    <section>
       <h2 className="text-3xl font-bold text-center">Top Destinations</h2>
       <div className="flex items-center justify-center mt-8">
         <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">

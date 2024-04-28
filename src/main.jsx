@@ -42,7 +42,11 @@ const routes = createBrowserRouter([
       },
       {
         path: "/tour-details/:id",
-        element: <TouristDetails />,
+        element: (
+          <PrivateRoutes>
+            <TouristDetails />
+          </PrivateRoutes>
+        ),
       },
       {
         path: "/my-list",

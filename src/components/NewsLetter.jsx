@@ -1,6 +1,6 @@
 const NewsLetter = () => {
   return (
-    <div className="container mx-auto my-20">
+    <div className="container mx-auto my-24">
       <div className="flex flex-col items-center gap-10 shadow-lg md:flex-row rounded-xl">
         <img
           src={`https://images.pexels.com/photos/1049298/pexels-photo-1049298.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1`}
@@ -26,7 +26,7 @@ const NewsLetter = () => {
         </div>
       </div>
 
-      <div className="flex flex-col items-center justify-center gap-8 mt-20 md:flex-row">
+      <div className="flex flex-col items-center justify-center gap-8 mt-24 md:flex-row">
         <div className="w-full md:w-1/2">
           <img
             src="https://images.pexels.com/photos/5428830/pexels-photo-5428830.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"

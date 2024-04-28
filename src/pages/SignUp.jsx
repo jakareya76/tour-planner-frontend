@@ -22,7 +22,18 @@ const SignUp = () => {
     const password = form.password.value;
 
     if (password.length < 6) {
-      return alert("Password Must Be 6 character");
+      toast.error("Password must be at least 6 character");
+      return;
+    }
+
+    if (!/[A-Z]/.test(password)) {
+      toast.error("Password Must have an Uppercase And Lowercase letter");
+      return;
+    }
+
+    if (!/[a-z]/.test(password)) {
+      toast.error("Password Must have an Uppercase And Lowercase letter");
+      return;
     }
 
     try {

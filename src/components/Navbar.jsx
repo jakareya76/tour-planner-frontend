@@ -71,9 +71,30 @@ const Navbar = () => {
         ) : (
           <>
             {user ? (
-              <button className="mx-4 btn" onClick={() => logout()}>
-                Logout
-              </button>
+              <>
+                <div className="z-50 dropdown dropdown-hover dropdown-end">
+                  <div tabIndex={0} role="button">
+                    <img
+                      alt="User img"
+                      src={user?.photoURL}
+                      className="w-12 h-12 rounded-full"
+                    />
+                  </div>
+                  <ul
+                    tabIndex={0}
+                    className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
+                  >
+                    <li className="mt-2 mb-4 text-xl font-semibold text-center">
+                      {user?.displayName}
+                    </li>
+                    <li>
+                      <button className="mx-4 btn" onClick={() => logout()}>
+                        Logout
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+              </>
             ) : (
               <>
                 <Link to="/login" className="mx-2 btn btn-primary">
@@ -83,31 +104,6 @@ const Navbar = () => {
                   Sign Up
                 </Link>
               </>
-            )}
-
-            {user && (
-              <div className="dropdown dropdown-end">
-                <div
-                  tabIndex={0}
-                  role="button"
-                  className="btn btn-ghost btn-circle avatar"
-                >
-                  <div className="w-10 rounded-full">
-                    <img alt="User img" src={user?.photoURL} />
-                  </div>
-                </div>
-                <ul
-                  tabIndex={0}
-                  className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
-                >
-                  <li>
-                    <a>Profile</a>
-                  </li>
-                  <li>
-                    <a>Settings</a>
-                  </li>
-                </ul>
-              </div>
             )}
           </>
         )}
