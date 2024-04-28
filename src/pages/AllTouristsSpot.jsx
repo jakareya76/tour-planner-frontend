@@ -2,8 +2,8 @@ import TouristSpots from "../components/TouristSpots";
 
 const AllTouristsSpot = () => {
   return (
-    <div className="my-5">
-      <TouristSpots />;
+    <div className="container mx-auto my-5">
+      <TouristSpots isShowSort={true} />;
     </div>
   );
 };
