@@ -8,7 +8,6 @@ Welcome to Tour Planner, a MERN stack website where users can plan and share the
 
 - **User Authentication**: Secure sign-up and login functionality to create and access user accounts.
 - **Tour Creation**: Users can easily create and customize their tour plans, including destinations, activities, and dates.
-- **Interactive Map**: Explore Southeast Asia through an interactive map interface, allowing users to visualize tour destinations.
 - **Tour Sharing**: Share your tour plans with other users and discover new travel ideas from the community.
 - **Community Engagement**: Interact with other users through comments, likes, and ratings on shared tour plans.
 
