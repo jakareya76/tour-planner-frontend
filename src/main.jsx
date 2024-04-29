@@ -60,7 +60,9 @@ const routes = createBrowserRouter([
         path: "/edit-tour/:id",
         element: <EditTour />,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/tour/${params.id}`),
+          fetch(
+            `https://tour-planner-backend-ten.vercel.app/tour/${params.id}`
+          ),
       },
       {
         path: "/sign-up",

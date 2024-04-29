@@ -11,7 +11,9 @@ const TouristSpots = ({ isShowSort }) => {
 
   useEffect(() => {
     const getAllTours = async () => {
-      const res = await fetch("http://localhost:5000/all-tour");
+      const res = await fetch(
+        "https://tour-planner-backend-ten.vercel.app/all-tour"
+      );
       const data = await res.json();
 
       const sortedData = sortTours(data, sortBy);

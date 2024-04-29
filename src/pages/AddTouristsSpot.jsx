@@ -37,13 +37,16 @@ const AddTouristsSpot = () => {
     };
 
     try {
-      const res = await fetch("http://localhost:5000/add-tour", {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(touristSpot),
-      });
+      const res = await fetch(
+        "https://tour-planner-backend-ten.vercel.app/add-tour",
+        {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(touristSpot),
+        }
+      );
 
       if (res.ok) {
         form.reset();

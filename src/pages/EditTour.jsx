@@ -37,13 +37,16 @@ const EditTour = () => {
     };
 
     try {
-      const res = await fetch(`http://localhost:5000/update-tour/${id}`, {
-        method: "PUT",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(updatedTouristSpot),
-      });
+      const res = await fetch(
+        `https://tour-planner-backend-ten.vercel.app/update-tour/${id}`,
+        {
+          method: "PUT",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(updatedTouristSpot),
+        }
+      );
 
       const data = await res.json();
 

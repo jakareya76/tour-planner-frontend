@@ -8,7 +8,9 @@ const TouristDetails = () => {
 
   useEffect(() => {
     const getTourData = async () => {
-      const res = await fetch(`http://localhost:5000/tour/${id}`);
+      const res = await fetch(
+        `https://tour-planner-backend-ten.vercel.app/tour/${id}`
+      );
       const data = await res.json();
 
       setTourData(data);

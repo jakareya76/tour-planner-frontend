@@ -5,7 +5,9 @@ const Destinations = () => {
 
   useEffect(() => {
     const getAllCountryData = async () => {
-      const res = await fetch("http://localhost:5000/all-country");
+      const res = await fetch(
+        "https://tour-planner-backend-ten.vercel.app/all-country"
+      );
       const data = await res.json();
 
       setAllCountry(data);

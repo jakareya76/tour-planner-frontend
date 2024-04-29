@@ -24,7 +24,7 @@ const MyList = () => {
 
     if (result.isConfirmed) {
       try {
-        const res = await fetch(`http://localhost:5000/delete-tour/${id}`, {
+        const res = await fetch(`https://tour-planner-backend-ten.vercel.app/delete-tour/${id}`, {
           method: "DELETE",
         });
 
@@ -45,7 +45,7 @@ const MyList = () => {
 
   useEffect(() => {
     const getMyAllTours = async () => {
-      const res = await fetch(`http://localhost:5000/my-tour/${myEmail}`);
+      const res = await fetch(`https://tour-planner-backend-ten.vercel.app/my-tour/${myEmail}`);
       const data = await res.json();
 
       setMyTourList(data);
